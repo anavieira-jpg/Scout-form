@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -222,8 +222,8 @@
         <div class="logo">MINDERA_</div>
         <h1>Join<br>Us.</h1>
         <div class="manifesto">
-            <p>Olá! Queremos conhecer pessoas apaixonadas por tecnologia. Na Mindera, construímos software com propósito, autonomia e colaboração.</p>
-            <p>Se queres estar no nosso radar para o futuro, deixa aqui o teu CV.</p>
+            <p>Hey! We want to meet people who are passionate about technology. At Mindera, we build software with purpose, autonomy and collaboration.</p>
+            <p>If you want to be on our radar for the future, drop your CV here.</p>
         </div>
         <div class="tags">
             <div class="tag">Crafting Software</div>
@@ -235,7 +235,7 @@
     <section class="form-panel">
         <form id="mindera-form">
             <div class="form-group">
-                <label for="name">1. Nome</label>
+                <label for="name">1. Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" required>
             </div>
 
@@ -252,7 +252,7 @@
             <div class="form-group">
                 <label>4. Curriculum Vitae (PDF/DOCX)</label>
                 <div class="file-drop-area">
-                    <span class="file-msg" id="file-msg">Arraste o ficheiro ou clique aqui</span>
+                    <span class="file-msg" id="file-msg">Drag the file or click here</span>
                     <input class="file-input" type="file" name="cv" id="cv" accept=".pdf,.docx">
                 </div>
             </div>
@@ -277,7 +277,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="btn-submit" id="btn-submit">Enviar Candidatura</button>
+            <button type="submit" class="btn-submit" id="btn-submit">Submit Application</button>
 
             <div id="form-msg" style="display:none; margin-top: 20px; font-weight:700; font-size:0.9rem;"></div>
         </form>
@@ -287,7 +287,7 @@
 <script>
     // Show filename when file is selected
     document.getElementById('cv').addEventListener('change', function () {
-        const msg = this.files[0] ? this.files[0].name : 'Arraste o ficheiro ou clique aqui';
+        const msg = this.files[0] ? this.files[0].name : 'Drag the file or click here';
         document.getElementById('file-msg').textContent = msg;
     });
 
@@ -304,12 +304,12 @@
     document.getElementById('mindera-form').addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBOkUTqkWB44cBy8GpC2icg6rCfRJNbrrF2CxkZrEJn2GAnRBisW7ez1bUT1mD71xyOw/exec';
+        const SCRIPT_URL = 'COLE_AQUI_O_URL_DO_APPS_SCRIPT';
 
         const btn = document.getElementById('btn-submit');
         const msgEl = document.getElementById('form-msg');
 
-        btn.textContent = 'A enviar...';
+        btn.textContent = 'Sending...';
         btn.disabled = true;
         msgEl.style.display = 'none';
 
@@ -336,16 +336,16 @@
 
             msgEl.style.display = 'block';
             msgEl.style.color = 'green';
-            msgEl.textContent = '✓ Candidatura enviada com sucesso!';
+            msgEl.textContent = '✓ Application submitted successfully!';
             this.reset();
-            document.getElementById('file-msg').textContent = 'Arraste o ficheiro ou clique aqui';
-            btn.textContent = 'Enviar Candidatura';
+            document.getElementById('file-msg').textContent = 'Drag the file or click here';
+            btn.textContent = 'Submit Application';
             btn.disabled = false;
         } catch (err) {
             msgEl.style.display = 'block';
             msgEl.style.color = 'red';
-            msgEl.textContent = '✗ Erro ao enviar. Tenta novamente.';
-            btn.textContent = 'Enviar Candidatura';
+            msgEl.textContent = '✗ Error sending. Please try again.';
+            btn.textContent = 'Submit Application';
             btn.disabled = false;
         }
     });
